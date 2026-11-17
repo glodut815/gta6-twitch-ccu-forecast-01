@@ -22,7 +22,7 @@ Each comparable is weighted by how similar it is to the case at hand:
     "target-history" (the game's own pre-release category) skipped.
 
 Per forecast hour, the weighted median of the log-ratios is the centre and
-the weighted standard deviation (x0.75, floored at 0.20 + 0.02*sqrt(h-1))
+the weighted standard deviation (x0.75, floored at 0.25 + 0.02*sqrt(h-1))
 is the log spread:
     q_tau(h) = p1 * exp(median_h + z_tau * sigma_h).
 Quantiles are rounded to 2 decimals, half up, exactly like the house
@@ -36,7 +36,7 @@ identical bytes.
 
 Validation (local, against SullyGnome hourly averages for the four practice
 launches' release days, and leave-one-out over the 38 comparables):
-  practice pinball loss 0.212 vs house persistence baseline 0.387;
+  practice pinball loss 0.211 vs house persistence baseline 0.387;
   leave-one-out loss 0.388 vs baseline 0.930.
 
 How the grader runs it: `python3 -P -s /bot/main.py` in python:3.13-slim,
@@ -66,7 +66,7 @@ Z = [-1.6448536269514722, -0.6744897501960817, 0.0, 0.6744897501960817, 1.644853
 # Tuned constants (see module docstring for validation numbers).
 SCALE_BW = 1.25          # log-unit bandwidth of the scale kernel
 UNLOCK_MULT = 2.0        # weight multiplier for matching unlock shape
-SIGMA_FLOOR = 0.20       # minimum log spread at hour 2
+SIGMA_FLOOR = 0.25       # minimum log spread at hour 2
 SIGMA_GROWTH = 0.02      # extra log spread per sqrt(hour - 1)
 SIGMA_MULT = 0.75        # shrink factor on the weighted std of log-ratios
 BASE_SIGMA = 0.15        # fallback persistence spread (house baseline)

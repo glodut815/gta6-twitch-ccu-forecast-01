@@ -27,8 +27,8 @@ release days:
 | Marvel's Wolverine | 0.360 | 0.744 |
 | Red Dead Redemption 2 | 0.155 | 0.287 |
 | God of War Ragnarök | 0.139 | 0.215 |
-| Marvel's Spider-Man 2 | 0.194 | 0.303 |
-| **mean pinball loss** | **0.212** | **0.387** |
+| Marvel's Spider-Man 2 | 0.189 | 0.303 |
+| **mean pinball loss** | **0.211** | **0.387** |
 
 Leave-one-out over the 38 comparables (148 pseudo-cases): loss 0.388 vs
 baseline 0.930.
